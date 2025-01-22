@@ -1,0 +1,36 @@
+satydeva-printing-cluster/
+├── config/
+│   └── database.js
+├── public/
+│   ├── css/
+│   │   ├── style.css
+│   │   └── dashboard.css
+│   ├── js/
+│   │   ├── login.js
+│   │   └── dashboard.js
+│   └── images/
+├── routes/
+│   ├── auth.js
+│   ├── admin.js
+│   └── index.js
+├── views/
+│   ├── partials/
+│   │   ├── header.ejs
+│   │   ├── footer.ejs
+│   │   └── nav.ejs
+│   ├── index.ejs
+│   ├── login.ejs
+│   ├── about.ejs
+│   ├── contact.ejs
+│   └── dashboard/
+│       ├── admin.ejs
+│       ├── inventory.ejs
+│       ├── sales.ejs
+│       └── add-user.ejs
+├── middleware/
+│   └── auth.js
+├── .env
+├── .gitignore
+├── package.json
+├── server.js
+└── README.md 

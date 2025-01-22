@@ -1,0 +1,26 @@
+<%- include('../partials/header', { isDashboard: true }) %>
+
+<div class="dashboard-container">
+    <header class="dashboard-header">
+        <h1>Admin Dashboard</h1>
+        <div class="header-nav">
+            <a href="/admin/add-user" class="nav-button">Add Users</a>
+            <a href="/admin/inventory" class="nav-button">Inventory</a>
+            <a href="/admin/sales" class="nav-button active">Sales</a>
+            <form action="/auth/logout" method="GET" style="display: inline;">
+                <button type="submit" class="nav-button logout-btn">Logout</button>
+            </form>
+        </div>
+    </header>
+
+    <main class="dashboard-content">
+        <div class="content-section">
+            <h2>Sales Dashboard</h2>
+            <div class="sales-section">
+                <p>Sales management section</p>
+            </div>
+        </div>
+    </main>
+</div>
+
+<%- include('../partials/footer') %> 
