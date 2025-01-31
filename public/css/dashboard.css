@@ -155,14 +155,31 @@
     display: flex;
     gap: 1rem;
     margin-top: 1rem;
+    max-width: 800px;
+    margin: 1rem auto;
 }
 
 .search-bar input {
     flex: 1;
-    padding: 0.8rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 1rem;
+    padding: 1rem 1.5rem;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    font-size: 1.1rem;
+}
+
+.search-bar button {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    border-radius: 6px;
+    background: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-bar button:hover {
+    background: #0056b3;
 }
 
 .search-results {
@@ -299,4 +316,438 @@
 
 .customer-card .edit-btn:hover {
     background: #0056b3;
+}
+
+.user-management-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.user-list {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.user-table-container {
+    overflow-x: auto;
+    margin-top: 1rem;
+}
+
+.user-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.user-table th,
+.user-table td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.user-table th {
+    background: #f8f9fa;
+    font-weight: 600;
+}
+
+.user-table tr:hover {
+    background: #f8f9fa;
+}
+
+.edit-user-btn,
+.delete-user-btn {
+    padding: 0.4rem 0.8rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-right: 0.5rem;
+}
+
+.edit-user-btn {
+    background: #007bff;
+    color: white;
+}
+
+.delete-user-btn {
+    background: #dc3545;
+    color: white;
+}
+
+.add-user-form {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.alert {
+    padding: 1rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+.alert.success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.alert.error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.submit-btn {
+    background: #28a745;
+    color: white;
+}
+
+.reset-btn {
+    background: #6c757d;
+    color: white;
+}
+
+.inventory-controls {
+    margin-bottom: 2rem;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-end;
+}
+
+.category-selection,
+.subcategory-selection {
+    flex: 1;
+}
+
+.category-selection label,
+.subcategory-selection label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.category-selection select,
+.subcategory-selection select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.items-table-container {
+    overflow-x: auto;
+    margin-top: 1rem;
+}
+
+.items-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.items-table th,
+.items-table td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.items-table th {
+    background: #f8f9fa;
+    font-weight: 600;
+}
+
+.inventory-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.inventory-table th,
+.inventory-table td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.inventory-table th {
+    background: #f8f9fa;
+    font-weight: 600;
+}
+
+.inventory-table tbody tr:hover {
+    background: #f8f9fa;
+}
+
+.category-tabs {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.category-tab {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background: #e9ecef;
+    color: #495057;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 1px solid #dee2e6;
+}
+
+.category-tab:hover {
+    background: #dee2e6;
+    color: #212529;
+}
+
+.category-tab[data-category="1"].active {
+    background: #28a745;
+    color: white;
+}
+
+.category-tab[data-category="2"].active {
+    background: #007bff;
+    color: white;
+}
+
+.category-tab[data-category="3"].active {
+    background: #6f42c1;
+    color: white;
+}
+
+.subcategory-header {
+    background: #f8f9fa;
+}
+
+.subcategory-header td {
+    padding: 1rem 0.75rem !important;
+}
+
+/* Add these styles for the GST input help text */
+.form-text {
+    font-size: 0.875rem;
+    color: #6c757d;
+    margin-top: 0.25rem;
+}
+
+.form-text ul {
+    margin-top: 0.5rem;
+    padding-left: 1.25rem;
+}
+
+.form-text li {
+    margin-bottom: 0.25rem;
+}
+
+/* Add validation styles */
+input:invalid {
+    border-color: #dc3545;
+}
+
+input:invalid:focus {
+    border-color: #dc3545;
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+}
+
+input:valid {
+    border-color: #28a745;
+}
+
+input:valid:focus {
+    border-color: #28a745;
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+}
+
+/* Add these styles to your dashboard.css */
+
+.vendor-selection-section {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #dee2e6;
+}
+
+.search-container {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#vendorSearch {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+#vendorSearch:focus {
+    border-color: #007bff;
+    box-shadow: 0 2px 8px rgba(0,123,255,0.1);
+    outline: none;
+}
+
+.search-results-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #dee2e6;
+    border-radius: 0 0 4px 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    max-height: 300px;
+    overflow-y: auto;
+    display: none;
+    z-index: 1000;
+}
+
+.vendor-result-item {
+    padding: 0.8rem;
+    cursor: pointer;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.vendor-result-item:hover {
+    background: #f8f9fa;
+}
+
+.vendor-result-item:last-child {
+    border-bottom: none;
+}
+
+.selected-vendor-info {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: white;
+    border-radius: 4px;
+    border: 1px solid #dee2e6;
+}
+
+.vendor-details {
+    margin: 1rem 0;
+}
+
+.secondary-btn {
+    background: #6c757d;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.secondary-btn:hover {
+    background: #5a6268;
+}
+
+/* Style for the vendor search in Add Vendor page */
+.vendor-form .search-bar {
+    display: flex;
+    gap: 1rem;
+    margin: 2rem auto;
+    max-width: 1500px;
+    padding: 0 1rem;
+}
+
+.vendor-form .search-bar input[type="text"] {
+    flex: 1;
+    height: 70px;
+    padding: 0 2rem;
+    border: 2px solid #ced4da;
+    border-radius: 8px;
+    font-size: 1.4rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    width: 100%;
+    min-width: 800px;
+}
+
+.vendor-form .search-bar button {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    height: 40px;
+    align-self: center;
+    min-width: 80px;
+    border-radius: 4px;
+    background: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.vendor-form .search-bar button:hover {
+    background: #0056b3;
+}
+
+.vendor-form .search-results {
+    max-width: 1500px;
+    margin: 0.5rem auto;
+    padding: 0 1rem;
+}
+
+.vendor-form .search-section h2 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+/* Updated vendor search styles - more compact version */
+.search-container-wide {
+    width: 100%;
+    max-width: 1200px;  /* Reduced from 1800px */
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.search-bar-wide {
+    display: flex;
+    gap: 1rem;
+    margin: 1.5rem auto;
+    width: 100%;
+}
+
+.vendor-search-input {
+    flex: 1;
+    height: 55px;      /* Reduced from 70px */
+    padding: 0 1.5rem;
+    border: 2px solid #ced4da;
+    border-radius: 6px;
+    font-size: 1.2rem; /* Reduced from 1.4rem */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    width: 100%;
+    min-width: 600px;  /* Reduced from 1200px */
+}
+
+/* Update the search button to match */
+.search-bar-wide button {
+    padding: 0 1.5rem;
+    font-size: 1rem;
+    height: 40px;
+    align-self: center;
+    min-width: 90px;
+    border-radius: 6px;
+    background: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* Update the search results container */
+.vendor-form .search-results {
+    max-width: 1200px;  /* Match container width */
+    margin: 0.5rem auto;
+    padding: 0 1.5rem;
 } 

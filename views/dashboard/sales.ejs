@@ -4,9 +4,10 @@
     <header class="dashboard-header">
         <h1>Admin Dashboard</h1>
         <div class="header-nav">
-            <a href="/admin/add-user" class="nav-button">Add Users</a>
+            <a href="/admin/add-vendor" class="nav-button <%= path === '/admin/add-vendor' ? 'active' : '' %>">Add Vendor</a>
+            <a href="/admin/add-customer" class="nav-button <%= path === '/admin/add-customer' ? 'active' : '' %>">Add Customer</a>
             <a href="/admin/inventory" class="nav-button">Inventory</a>
-            <a href="/admin/sales" class="nav-button active">Sales</a>
+            <a href="/admin/sales" class="nav-button active">Sales Charges</a>
             <form action="/auth/logout" method="GET" style="display: inline;">
                 <button type="submit" class="nav-button logout-btn">Logout</button>
             </form>

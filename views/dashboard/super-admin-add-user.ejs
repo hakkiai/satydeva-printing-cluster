@@ -1,0 +1,91 @@
+<%- include('../partials/header', { isDashboard: true }) %>
+
+<div class="dashboard-container">
+    <header class="dashboard-header">
+        <h1>Super Admin Dashboard</h1>
+        <div class="header-nav">
+            <a href="/super-admin/add-user" class="nav-button active">Add User</a>
+            <a href="/super-admin/inventory" class="nav-button">Inventory</a>
+            <form action="/auth/logout" method="GET" style="display: inline;">
+                <button type="submit" class="nav-button logout-btn">Logout</button>
+            </form>
+        </div>
+    </header>
+
+    <main class="dashboard-content">
+        <div class="content-section">
+            <h2>Add New User</h2>
+            
+            <% if (typeof message !== 'undefined') { %>
+                <div class="alert <%= message.type %>">
+                    <%= message.text %>
+                </div>
+            <% } %>
+
+            <div class="user-management-section">
+                <!-- User List -->
+                <div class="user-list">
+                    <h3>Existing Users</h3>
+                    <div class="user-table-container">
+                        <table class="user-table">
+                            <thead>
+                                <tr>
+                                    <th>Username</th>
+                                    <th>Role</th>
+                                    <th>Created At</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% users.forEach(user => { %>
+                                    <tr>
+                                        <td><%= user.username %></td>
+                                        <td><%= user.role %></td>
+                                        <td><%= new Date(user.created_at).toLocaleDateString() %></td>
+                                        <td>
+                                            <button class="edit-user-btn" data-userid="<%= user.id %>">Edit</button>
+                                            <button class="delete-user-btn" data-userid="<%= user.id %>">Delete</button>
+                                        </td>
+                                    </tr>
+                                <% }); %>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Add User Form -->
+                <div class="add-user-form">
+                    <h3>Add New User</h3>
+                    <form id="addUserForm" action="/super-admin/add-user" method="POST">
+                        <div class="form-group">
+                            <label for="username">Username*</label>
+                            <input type="text" id="username" name="username" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="password">Password*</label>
+                            <input type="password" id="password" name="password" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="role">Role*</label>
+                            <select id="role" name="role" required>
+                                <option value="">Select Role</option>
+                                <option value="admin">Admin</option>
+                                <option value="reception">Reception</option>
+                                <option value="accounts">Accounts</option>
+                            </select>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="submit-btn">Add User</button>
+                            <button type="reset" class="reset-btn">Clear</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+<%- include('../partials/footer') %> 

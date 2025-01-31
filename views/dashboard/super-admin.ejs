@@ -4,8 +4,8 @@
     <header class="dashboard-header">
         <h1>Super Admin Dashboard</h1>
         <div class="header-nav">
-            <a href="/super-admin/manage-admins" class="nav-button">Manage Admins</a>
-            <a href="/super-admin/system-settings" class="nav-button">System Settings</a>
+            <a href="/super-admin/add-user" class="nav-button <%= path === '/super-admin/add-user' ? 'active' : '' %>">Add User</a>
+            <a href="/super-admin/inventory" class="nav-button <%= path === '/super-admin/inventory' ? 'active' : '' %>">Inventory</a>
             <form action="/auth/logout" method="GET" style="display: inline;">
                 <button type="submit" class="nav-button logout-btn">Logout</button>
             </form>
@@ -14,9 +14,9 @@
 
     <main class="dashboard-content">
         <div class="content-section">
-            <h2>Welcome, Super Admin</h2>
+            <h2>Welcome, <%= user.username %></h2>
             <div class="dashboard-stats">
-                <p>Super admin controls and overview will appear here...</p>
+                <p>Manage system users and inventory from here.</p>
             </div>
         </div>
     </main>
